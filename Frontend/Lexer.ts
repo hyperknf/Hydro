@@ -96,6 +96,15 @@ export function Tokenize(source: string): Token[] {
             }
             source_characters.shift()
             tokens.push(token(string, TokenType.String))
+        } else if (source_characters[0] == "'") {
+            source_characters.shift()
+            let string: string = ""
+            while (source_characters[0] != "'") {
+                if (source_characters[0] == "\n" || !source_characters[0]) throw new Error("Unexpected end of string")
+                string += source_characters.shift()
+            }
+            source_characters.shift()
+            tokens.push(token(string, TokenType.String))
         } else {
             if (is_integer(source_characters[0])) {
                 let number: string = ""
