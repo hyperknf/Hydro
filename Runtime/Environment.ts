@@ -9,7 +9,9 @@ export function SetupGlobalScope(environment: Environment): void {
     environment.Declare("undefined", true, "undefined", MakeValue.Undefined())
 
     environment.Declare("print", true, "native-function", MakeValue.NativeFunction(NativeFunctions.Print))
+    environment.Declare("prompt", true, "native-function", MakeValue.NativeFunction(NativeFunctions.Prompt))
     environment.Declare("getTime", true, "native-function", MakeValue.NativeFunction(NativeFunctions.GetTime))
+    environment.Declare("evaluate", true, "native-function", MakeValue.NativeFunction(NativeFunctions.Eval))
 }
 
 export class Variable {
@@ -40,7 +42,9 @@ export class Environment {
         "undefined",
         
         "print",
-        "getTime"
+        "prompt",
+        "getTime",
+        "evaluate"
     ]
 
     constructor(parent_environment?: Environment) {
