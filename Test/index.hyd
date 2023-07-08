@@ -1,0 +1,3 @@
+use "Console"
+
+print("Hello world!")
