@@ -1,0 +1,1 @@
+tsc ./Main.ts --outDir ./Compiled

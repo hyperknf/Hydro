@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "@types/node": "^20.3.1",
+    "prompt-sync": "^4.2.0",
+    "rcedit": "^3.0.1",
+    "typescript": "^5.1.3"
+  },
+  "name": "hydro-lang",
+  "description": "Hydro is a work-in-progress statically typed interpreted object oriented programming language written in TypeScript",
+  "pkg": {
+    "scripts": "./Compiled/*/*/*.js",
+    "assets": "./Compiled/Version",
+    "targets": [
+      "node18-win-x64"
+    ]
+  }
+}
